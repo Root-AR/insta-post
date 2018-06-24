@@ -1,0 +1,63 @@
+<div class="posts-header header">
+    <nav class="navbar">
+        <span class="navbar-brand mb-0 ">Insta Posts</span>
+        <form class="form-inline">
+            <button class="btn btn-outline-success logout" (click)="logout()">Logout</button>
+        </form>
+    </nav>
+</div>
+<section id="posts-section">
+    <div class="container-fluid">
+        <div class="user-posts-container">
+            <div class="user-post card"> 
+                <div class="card-body">
+                    <p class="add-post" (click)="openModal(template)" > 
+                        +
+                    </p>
+                </div>
+            </div>
+            <div  class="user-post card" *ngFor="let post of posts">
+                <div class="card-body">
+                        <h5 class="card-title">{{post.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{post.shortDescrption}}</h6>
+                        <p class="card-text">
+                            {{post.longDescription}}
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Template for creating new posts-->
+    <div class="add-post-modal">
+        <ng-template #template>
+            <div class="modal-header">
+              <h4 class="modal-title pull-left">Create New Post</h4>
+              <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="create-post-form-container">
+                    <form class="createPostform" #createPostform="ngForm" (ngSubmit)="addNewPost(createPostform)" novalidate>
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" ngModel #title="ngModel" required placeholder="Enter title">
+                        </div>
+                        <div class="form-group">
+                            <label for="shortDescription">Short Description</label>
+                            <input type="text" class="form-control" id="shortDescription" name="shortDescription" ngModel #shortDescription="ngModel" placeholder="Enter Short Descrption">
+                        </div>
+                        <div class="form-group">
+                            <label for="longDescription">Long Description</label>
+                            <textarea  class="form-control" id="longDescription" name="longDescription" ngModel #longDescription="ngModel"  required placeholder="Enter Long Description">
+                            </textarea>
+                        </div>
+                        <div class="save-post">
+                            <button type="submit" class="btn btn-default btn-warning ">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>

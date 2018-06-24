@@ -1,0 +1,59 @@
+<div class="posts-header header">
+    <nav class="navbar">
+        <p class="navbar-brand mb-0 app-title ">Welcome to Insta Posts</p>
+    </nav>
+</div>
+<section id="login">
+    <div class="wrapper"> 
+        <div class="container">
+            <div class="form-container">
+                <div class="registration-form-container">
+                    <h4 class="form-heading">New User</h4>
+                    <hr>
+                    <form class="registration-form" #registrationForm="ngForm" (ngSubmit)="register(registrationForm)">
+                        <div class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname" ngModel #firstname="ngModel" required minlength="1" placeholder="Enter First Name">
+                          
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname" ngModel required minlength="1" placeholder="Enter Last Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="userName" name="userName" ngModel  required minlength="1" placeholder="Enter Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password"  name="password" ngModel  required minlength="1" placeholder="Enter password">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg btn-block"  >Register</button>
+                        <div class="alert alert-danger" *ngIf="!isRegistrationFormValid" style="margin-top:20px;">
+                                Please provide correct registration details
+                        </div>
+                    </form>
+                </div>
+                <div class="login-form-container">
+                    <h4 class="form-heading">Existing User</h4>
+                    <hr>
+                    <form class="login-form"  #loginForm="ngForm" (ngSubmit)="login(loginForm)" novalidate>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="lusername"  name="lusername"  required minlength="1" ngModel placeholder="Enter Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="lpassword" name="lpassword"  required minlength="1" ngModel placeholder="Enter password">
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-lg btn-block" >Login</button>
+                        <div class="alert alert-danger" *ngIf="!isLoginFormValid" style="margin-top:20px;">
+                            Please provide correct login details
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

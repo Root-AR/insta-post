@@ -1,0 +1,51 @@
+
+.header {
+    background-color:#8dc191 !important;
+    padding: 0 30px;
+}
+.navbar-brand {
+    font-size : 28px !important;
+    font-weight: 300;
+}
+
+.container-fluid, #posts-section {
+    height:100%;
+    overflow-y: scroll;
+}
+#posts-section{
+    padding:30px;
+}
+
+.add-post{
+    text-align: center;
+    font-size:70px;
+    font-weight: 200;
+    margin-top: 25%;
+}
+.user-posts-container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap :20px;
+    width:100%;
+}
+
+.user-post {
+    height:auto;
+    background-color: #fff;
+    box-shadow: rgba(114, 182, 234, 0.2) 1px 0 30px;
+}
+.user-post:hover {
+    cursor:pointer;
+}
+
+.save-post {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.logout {
+    background-color: #28a745;
+    color: #fff;
+}

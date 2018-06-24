@@ -1,0 +1,42 @@
+
+.header {
+    background-color:#8dc191 !important;
+    padding: 0 30px;
+}
+.navbar-brand {
+    font-size : 28px !important;
+    font-weight: 300;
+}
+.app-title{
+    margin: 0 auto;
+}
+
+.title{
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+}
+.form-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(351px, 1fr));
+    color:rgba(39, 95, 106, 0.85);
+    padding:30px;
+    margin-top:15%; 
+}
+.form-heading {
+    text-align: center;
+}
+
+.registration-form-container, .login-form-container {
+    padding:20px;
+    background-color:#fff;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(114, 182, 234, 0.2) 1px 0 30px;
+    border-radius: 8px;
+}
+
+.login-form {
+    margin-top :20%;
+}
+
